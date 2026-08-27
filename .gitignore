@@ -1,0 +1,2 @@
+# Exclude all dot-prefixed folders (e.g. .obsidian, .vscode, .idea)
+.*/
