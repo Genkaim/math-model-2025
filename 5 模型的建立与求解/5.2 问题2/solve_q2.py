@@ -70,10 +70,11 @@ def envelope_method(E, lo, hi):
     return np.array(out)
 
 
-def thickness_pair(s_p, s_v, n, theta):
-    """问题一式(7)：由相邻峰谷波数与折射率求厚度 d。"""
-    cv = np.sqrt(n ** 2 - np.sin(theta) ** 2)
-    return 1.0 / (4.0 * abs(s_v * cv - s_p * cv))
+def thickness_pair(s_p, s_v, n_p, n_v, theta):
+    """问题一式(7)：严格计入折射率色散，分别取 n(σp)、n(σv)。"""
+    c_p = np.sqrt(n_p ** 2 - np.sin(theta) ** 2)
+    c_v = np.sqrt(n_v ** 2 - np.sin(theta) ** 2)
+    return 1.0 / (4.0 * abs(s_v * c_v - s_p * c_p))
 
 
 def solve_extrema_method(s, R, theta):
@@ -89,9 +90,10 @@ def solve_extrema_method(s, R, theta):
         s_p, s_v = min(a[0], b[0]), max(a[0], b[0])
         if not (REGION_C[0] < s_p and s_v < REGION_C[1]):
             continue
-        n = np.polyval(cn, (s_p + s_v) / 2.)
-        d = thickness_pair(s_p, s_v, n, theta) * 1e4    # cm -> um
-        pairs.append((s_p, s_v, (s_p + s_v) / 2., n, d))
+        n_p = np.polyval(cn, s_p)                 # 峰、谷分别取折射率
+        n_v = np.polyval(cn, s_v)
+        d = thickness_pair(s_p, s_v, n_p, n_v, theta) * 1e4   # cm -> um
+        pairs.append((s_p, s_v, (s_p + s_v) / 2., n_p, n_v, d))
     pairs = np.array(pairs)
     return pairs, E, npts
 
@@ -137,8 +139,8 @@ def main():
         pairs, E, npts = solve_extrema_method(s, R, th)
         # 剔除受残余射线带影响的边界畸变对（峰谷中心波数 < 1500）
         clean = pairs[pairs[:, 2] > 1500]
-        med = np.median(clean[:, 4])
-        mad = median_abs_deviation(clean[:, 4], scale=1.0)
+        med = np.median(clean[:, 5])
+        mad = median_abs_deviation(clean[:, 5], scale=1.0)
         d_fit, rmse = fit_full_spectrum(s, R, th, med * 1e-4)
         d_med[name] = med
         print(f'\n【{name}】')
@@ -147,8 +149,9 @@ def main():
         print(f'  可靠区 {REGION_C[0]:.0f}-{REGION_C[1]:.0f} cm-1 内峰谷对 '
               f'{len(pairs)} 个，剔除畸变对后 {len(clean)} 个')
         print(f'  单峰谷对厚度 d_j / μm：')
-        for sp, sv, mid, n, d in clean:
-            print(f'    σp={sp:7.2f} σv={sv:7.2f}  n={n:.3f}  d={d:6.2f}')
+        for sp, sv, mid, np_, nv, d in clean:
+            print(f'    σp={sp:7.2f} σv={sv:7.2f}  n(σp)={np_:5.3f} '
+                  f'n(σv)={nv:5.3f}  d={d:6.2f}')
         print(f'  >> 相邻峰谷法：中位数 d = {med:.2f} μm，'
               f'MAD = {mad:.2f} μm（{mad/med*100:.1f}%）')
         print(f'  >> 全谱拟合精化：d = {d_fit:.2f} μm，拟合残差 rms = {rmse:.2f}%')
