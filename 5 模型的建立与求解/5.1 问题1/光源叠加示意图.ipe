@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.29">
-<info created="D:20260828130415" modified="D:20260828131521" tex="xetex"/>
+<info created="D:20260828130415" modified="D:20260828211034" tex="xetex"/>
 <preamble>\usepackage{ctex}
 \xeCJKsetup{CJKmath=true}
 \setCJKmathfont{SimSun}</preamble>
@@ -316,7 +316,7 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<text layer="alpha" matrix="1 0 0 1 -80.0898 2.99024" transformations="translations" pos="256 720" stroke="black" type="label" width="31.5" height="8.496" depth="1.06" valign="baseline">外延层</text>
+<text layer="alpha" matrix="1 0 0 1 -48.0898 2.99024" transformations="translations" pos="256 720" stroke="black" type="label" width="31.5" height="8.496" depth="1.06" valign="baseline">外延层</text>
 <text matrix="1 0 0 1 0.0395485 -2.65054" transformations="translations" pos="63.6667 823.714" stroke="black" type="label" width="21" height="8.455" depth="1.06" valign="baseline">光源</text>
 <path fill="0.882 1 1">
 64 816 m
@@ -376,27 +376,7 @@ h
 116.642 704 m
 122.762 752 l
 </path>
-<text matrix="1 0 0 1 30.8953 -8.20544" transformations="translations" pos="160 832" stroke="black" type="label" width="42" height="8.496" depth="1.06" valign="baseline">重叠部分</text>
-<path stroke="black">
-64 752 m
-208 752 l
-</path>
-<path stroke="black">
-64 704 m
-208 704 l
-</path>
-<path fill="0.945">
-64 704 m
-64 656 l
-208 656 l
-208 704 l
-h
-</path>
-<path stroke="black">
-64 704 m
-208 704 l
-</path>
-<text matrix="1 0 0 1 -9.95328 5.35469" transformations="translations" pos="192 672" stroke="black" type="label" width="21" height="8.619" depth="1.06" valign="baseline">衬底</text>
+<text matrix="1 0 0 1 -1.83679 -63.6976" transformations="translations" pos="160 832" stroke="black" type="label" width="99" height="7.422" depth="0.91" valign="baseline" size="small">两束反射光进入探测方向</text>
 <path stroke="1 0.502 0">
 170.762 816 m
 176 816 l
@@ -406,9 +386,25 @@ h
 122.762 752 m
 170.762 816 l
 </path>
-<path stroke="0" arrow="normal/tiny">
-172.458 817.404 m
-189.443 827.936 l
+<path stroke="0">
+64 752 m
+240 752 l
+</path>
+<path fill="0.894">
+64 704 m
+240 704 l
+240 656 l
+64 656 l
+h
+</path>
+<path stroke="0">
+64 704 m
+240 704 l
+</path>
+<text matrix="1 0 0 1 -9.57024 -10.3827" transformations="translations" pos="224 688" stroke="0" type="label" width="21" height="8.619" depth="1.06" valign="baseline">衬底</text>
+<path stroke="0" dash="dashed" arrow="normal/tiny">
+152.825 787.713 m
+186.224 780.881 l
 </path>
 </page>
 </ipe>

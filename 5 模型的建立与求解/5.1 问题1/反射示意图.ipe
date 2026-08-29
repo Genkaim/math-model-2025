@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.29">
-<info created="D:20260828130415" modified="D:20260828130415" tex="xetex"/>
+<info created="D:20260828204035" modified="D:20260828211507" tex="xetex"/>
 <preamble>\usepackage{ctex}
 \xeCJKsetup{CJKmath=true}
 \setCJKmathfont{SimSun}</preamble>
@@ -316,99 +316,72 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<text layer="alpha" matrix="1 0 0 1 -80.0898 2.99024" transformations="translations" pos="256 720" stroke="black" type="label" width="31.5" height="8.496" depth="1.06" valign="baseline">外延层</text>
-<text matrix="1 0 0 1 0.0395485 -2.65054" transformations="translations" pos="63.6667 823.714" stroke="black" type="label" width="21" height="8.455" depth="1.06" valign="baseline">光源</text>
-<path fill="0.882 1 1">
-64 816 m
-80 816 l
-128 752 l
-112 752 l
-h
-</path>
-<path fill="0.757 1 1">
-176 816 m
-160 816 l
-112 752 l
-128 752 l
-h
-</path>
-<path matrix="1 0 0 1 -5.2382 0" fill="1 0.667 0.333" opacity="30%" stroke-opacity="opaque">
-128 752 m
-144 752 l
-192 816 l
-176 816 l
-h
-</path>
-<path stroke="black">
-112 752 m
-128 752 l
-128 752 l
-112 752 l
-h
-</path>
-<path fill="1 0.91 0.816">
-112 752 m
-128 752 l
-132.642 704 l
-116.642 704 l
-h
-</path>
-<path fill="1 0.863 0.725">
-116.642 704 m
-132.642 704 l
-138.762 752 l
-122.762 752 l
-h
-</path>
-<path stroke="black" arrow="normal/tiny">
-64 816 m
-112 752 l
-</path>
-<path stroke="black" arrow="normal/tiny">
-112 752 m
-160 816 l
-</path>
-<path stroke="0" arrow="normal/tiny">
-112 752 m
-116.642 704 l
-</path>
-<path stroke="black" arrow="normal/tiny">
-116.642 704 m
-122.762 752 l
-</path>
-<text matrix="1 0 0 1 30.8953 -8.20544" transformations="translations" pos="160 832" stroke="black" type="label" width="42" height="8.496" depth="1.06" valign="baseline">重叠部分</text>
-<path stroke="black">
-64 752 m
-208 752 l
+<path layer="alpha" stroke="black">
+64 704 m
+304 704 l
 </path>
 <path stroke="black">
 64 704 m
-208 704 l
-</path>
-<path fill="0.945">
-64 704 m
-64 656 l
-208 656 l
-208 704 l
+304 704 l
+304 640 l
+64 640 l
 h
 </path>
-<path stroke="black">
+<path stroke="black" arrow="normal/normal">
+64 768 m
+304 768 l
+</path>
+<path stroke="black" arrow="normal/normal">
+80 816 m
+128 768 l
+</path>
+<path stroke="black" arrow="normal/normal">
+128 768 m
+176 816 l
+</path>
+<path stroke="0.776 0.251 0" arrow="normal/normal">
+128 768 m
+160 704 l
+</path>
+<path stroke="0.776 0.251 0" arrow="normal/normal">
+160 704 m
+192 768 l
+</path>
+<path stroke="black" arrow="normal/normal">
+192 768 m
+240 816 l
+</path>
+<path fill="0.89">
 64 704 m
-208 704 l
+64 640 l
+304 640 l
+304 704 l
+h
 </path>
-<text matrix="1 0 0 1 -9.95328 5.35469" transformations="translations" pos="192 672" stroke="black" type="label" width="21" height="8.619" depth="1.06" valign="baseline">衬底</text>
-<path stroke="1 0.502 0">
-170.762 816 m
-176 816 l
-176 816 l
+<text matrix="1 0 0 1 34.3919 3.16341" transformations="translations" pos="32 816" stroke="0" type="label" width="21" height="8.455" depth="1.06" valign="baseline">光源</text>
+<text matrix="1 0 0 1 33.2878 -14.3554" transformations="translations" pos="144 832" stroke="0" type="label" width="40.246" height="8.66" depth="1.06" valign="baseline">反射光1</text>
+<text matrix="1 0 0 1 -24.1336 17.268" transformations="translations" pos="272 800" stroke="0" type="label" width="40.246" height="8.66" depth="1.06" valign="baseline">反射光2</text>
+<text matrix="1 0 0 1 -12.1628 -12.9737" transformations="translations" pos="192 736" stroke="0.776 0.251 0" type="label" width="96.243" height="8.66" depth="1.06" valign="baseline">反射光2多走的路程</text>
+<path stroke="0" dash="dashed">
+128 816 m
+128 768 l
 </path>
-<path stroke="0" arrow="normal/tiny">
-122.762 752 m
-170.762 816 l
+<path stroke="0">
+116.248 779.752 m
+16.6197 0 0 -16.6197 128 768 128 784.62 a
 </path>
-<path stroke="0" arrow="normal/tiny">
-172.458 817.404 m
-189.443 827.936 l
+<text matrix="1 0 0 1 6.8656 -13.9393" transformations="translations" pos="112 800" stroke="0" type="label" width="5.221" height="7.292" depth="0" valign="baseline" style="math">\theta</text>
+<path stroke="0">
+135.943 752.114 m
+17.7611 0 0 -17.7611 128 768 128 750.239 a
 </path>
+<path stroke="0" dash="dashed">
+128 768 m
+128 720 l
+</path>
+<text matrix="1 0 0 1 0.790585 -12.8158" transformations="translations" pos="128 752" stroke="0" type="label" width="9.399" height="7.297" depth="1.57" valign="baseline" style="math">\theta_1</text>
+<text matrix="1 0 0 1 -84.8694 -34.3261" transformations="translations" pos="353.334 779.289" stroke="0" type="label" width="31.5" height="8.496" depth="1.06" valign="baseline">外延层</text>
+<text matrix="1 0 0 1 6.48683 8.64911" transformations="translations" pos="259.275 660.364" stroke="0" type="label" width="21" height="8.619" depth="1.06" valign="baseline">衬底</text>
+<text matrix="1 0 0 1 -34.8667 -1.08114" transformations="translations" pos="214.948 712.529" stroke="0.333 0.169 0" type="label" width="91.901" height="7.88" depth="2.62" valign="baseline" style="math">\Delta L=2dn(\sigma) \cos \theta_1​</text>
 </page>
 </ipe>

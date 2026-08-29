@@ -1,0 +1,30 @@
+// 问题二算法总体流程图（蛇形两行排布：上行 a→b→c，下行 d→e→f 自右向左接续）
+// 渲染：dot -Tsvg -o "../../图片/图4 问题二算法流程图.svg" "问题二算法流程图.dot"
+// 字体约定：中文 SimSun（宋体），西文/数学符号 Times New Roman
+digraph G {
+    rankdir=LR;
+    bgcolor="transparent";
+    nodesep=0.5;
+    ranksep=0.6;
+    node [shape=box, style="rounded,filled", fillcolor="#eef3fb", color="#3a5f8a",
+          penwidth=1.2, margin="0.18,0.12"];
+    edge [color="#555555", arrowsize=0.7, penwidth=1.0];
+
+    a [label=<<FONT FACE="SimSun" POINT-SIZE="12">数据读取与预处理</FONT>>];
+    b [label=<<FONT FACE="SimSun" POINT-SIZE="12">干涉峰谷检测</FONT>>];
+    c [label=<<FONT FACE="SimSun" POINT-SIZE="12">包络线法反推折射率</FONT>>];
+    d [label=<<FONT FACE="SimSun" POINT-SIZE="12">相邻峰谷法求解厚度</FONT>>];
+    e [label=<<FONT FACE="SimSun" POINT-SIZE="12">全谱拟合精化</FONT>>];
+    f [label=<<FONT FACE="SimSun" POINT-SIZE="12">可靠性分析</FONT>>];
+
+    a -> b;
+    b -> c;
+    c -> d;
+    d -> e;
+    e -> f;
+
+    // 蛇形两行：c 与 d 同列（垂直衔接），b/e、a/f 分别同列
+    {rank=same; c; d;}
+    {rank=same; b; e;}
+    {rank=same; a; f;}
+}
