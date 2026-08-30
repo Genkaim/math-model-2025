@@ -1,0 +1,28 @@
+print('=' * 66)
+print(f'硅外延层厚度（相邻峰谷法，n = {N_SI}）')
+print('=' * 66)
+meds = []
+for name, path, theta in files:
+P = solve(path, theta)
+d_j = P[:, 2]
+med = np.median(d_j)
+mad = median_abs_deviation(d_j, scale=1.0)
+meds.append(med)
+print(f'\n【{name}】')
+print(f'
+{"￿1":>9} {"￿2":>9} {"d_j/￿m":>8}')
+for s1, s2, dj in P:
+print(f'
+{s1:9.2f} {s2:9.2f} {dj:8.3f}')
+print(f'
+峰谷对{len(P)} 对，中位数{med:.2f} ￿m，'
+f'MAD {mad:.2f} ￿m（{mad / med * 100:.1f}%）')
+rel = abs(meds[0] - meds[1]) / np.mean(meds) * 100
+print('\n' + '-' * 66)
+print(f'双入射角一致性：{meds[0]:.2f} ￿m 与{meds[1]:.2f} ￿m，'
+f'相对差异{rel:.1f}%')
+print(f'最终结果：硅外延层厚度d ￿{np.mean(meds):.2f} ￿m')
+print('=' * 66)
+if __name__ == '__main__':
+main()
+64

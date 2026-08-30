@@ -1,0 +1,33 @@
+% 导言区：在 commons/cumcmthesis 的基础上扩展，不直接改 cls。
+
+% 图片目录（路径 图片/图X.png）
+\graphicspath{{图片/}}
+
+% 中文主字体设为宋体（SimSun），并启用伪粗体。
+% 关键在于把粗体形状挂在“宋体”上，\bfseries/\textbf 才会渲染成加粗宋体，
+% 而不是回落到默认的粗体替换字体（黑体）。
+\setCJKmainfont[AutoFakeBold={4}]{SimSun}
+% 同时把“宋体”族也绑定同一伪粗体，确保 \songti \song 与加粗同时使用时也是加粗宋体
+\setCJKfamilyfont{song}{SimSun}[AutoFakeBold={4}]
+\setCJKfamilyfont{zhsong}{SimSun}[AutoFakeBold={4}]
+% 公式中的汉字（如“宋体”里的下标汉字）需要以下两行：
+%   CJKmath=true 允许在数学模式里直接写汉字；\setCJKmathfont 指定公式里的汉字字体
+\XeTeXlinebreaklocale "zh"
+\xeCJKsetup{CJKmath=true}
+\setCJKmathfont{SimSun}
+
+% 附录代码排版：listings 直接引入 支持文件 目录下的 .py 源码。
+% xeCJK 会处理列表中的中文注释。
+\usepackage{listings}
+\lstset{
+  language=Python,
+  basicstyle=\zihao{6},
+  breaklines=true,
+  columns=flexible,
+  keepspaces=true,
+  showstringspaces=false,
+  keywordstyle=\bfseries,
+  tabsize=4,
+  aboveskip=6pt,
+  belowskip=10pt,
+}

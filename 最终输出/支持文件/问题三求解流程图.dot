@@ -1,0 +1,31 @@
+// 问题三求解总体流程图（蛇形两行排布：上行 b1→c1→c2 自左向右，下行 c3→c4 自右向左接续）
+// 渲染：dot -Tsvg -o "../../图片/图11 问题三求解流程图.svg" "问题三求解流程图.dot"
+// 字体约定：中文 SimSun（宋体），西文/数学符号 Times New Roman
+digraph G {
+    rankdir=LR;
+    bgcolor="transparent";
+    nodesep=0.4;
+    ranksep=0.6;
+    node [shape=box, style="rounded,filled", fillcolor="#eef3fb", color="#3a5f8a",
+          penwidth=1.2, margin="0.18,0.12"];
+    edge [color="#555555", arrowsize=0.7, penwidth=1.0];
+
+    b1 [label=<<FONT FACE="SimSun" POINT-SIZE="12">推导多光束干涉<BR/>产生的必要条件</FONT>>];
+    b2 [label=<<FONT FACE="SimSun" POINT-SIZE="12">分析多光束干涉对<BR/>厚度计算精度的影响</FONT>>];
+    c1 [label=<<FONT FACE="SimSun" POINT-SIZE="12">判别附件3、附件4（硅晶圆片）<BR/>是否出现多光束干涉</FONT>>];
+    c2 [label=<<FONT FACE="SimSun" POINT-SIZE="12">给出附件3、附件4硅外延层厚度计算的<BR/>数学模型与算法</FONT>>];
+    c3 [label=<<FONT FACE="SimSun" POINT-SIZE="12">判别附件1、附件2（碳化硅晶圆片）<BR/>是否出现多光束干涉</FONT>>];
+    c4 [label=<<FONT FACE="SimSun" POINT-SIZE="12">若出现，则修正<BR/>问题二的厚度结果</FONT>>];
+
+    b1 -> c1;
+    b2 -> c1;
+    c1 -> c2;
+    c2 -> c3;
+    c3 -> c4;
+
+    // 并列分支：两条理论任务在左端上下排布，汇合后进入数据分析
+    {rank=same; b1; b2;}
+    // 蛇形两行：c2 与 c3 同列（垂直衔接），c1 与 c4 同列
+    {rank=same; c2; c3;}
+    {rank=same; c1; c4;}
+}
